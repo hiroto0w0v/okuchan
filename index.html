@@ -79,16 +79,15 @@
         let count = localStorage.getItem("visitCount");
 
         if (!count) {
-            count = 1; // 初めて訪問した場合は1に設定
+            count = 1; // 初めて訪問した場合は1
         } else {
             count = parseInt(count) + 1; // 訪問回数をインクリメント
         }
 
-        // 新しい訪問回数をlocalStorageに保存
+        // visitCount を保存するために setItem を使用
         localStorage.setItem("visitCount", count);
 
-        // 訪問人数をHTMLに表示
-        document.getElementById("counter").textContent = count;
+        document.getElementById("counter").textContent = count; // 表示部分に反映
 
     </script>
     <script src="script.js"></script>
