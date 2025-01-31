@@ -10,21 +10,21 @@
 </head>
 
 <body>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/CwD5yNKgKtM?autoplay=1&mute1"
+    <img src="img/topimg.jpg" alt="トップ画像" class="top-image">
+
+   <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/CwD5yNKgKtM?autoplay=1&mute1"
         title="YouTube video player" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin" allow="autoplay" allowfullscreen></iframe>
+        referrerpolicy="strict-origin-when-cross-origin" allow="autoplay" allowfullscreen></iframe>-->
     <!-- 背景動画 -->
     <video autoplay muted loop id="background-video">
         <source src="mv/ネオンゲーム背景.mp4" type="video/mp4">
         <!-- サポートされていない場合の代替表示 -->
         お使いのブラウザは動画をサポートしていません。
     </video>
-    <p>いつも配信の応援ありがとうございます。息子と共に元気に配信しています。これからも配信の応援よろしくお願いします。</p>
+    <p>-月間配信予定表-</p>
     <!-- コンテンツ -->
-    <div class="counter">
-        <p>このサイトの訪問人数:<span id="counter">0</span>人</p>
-    </div>
+
     <div class="calendar-container">
         <div class="calendar-header">
             <button id="prev-month">&lt;</button>
@@ -71,25 +71,10 @@
                     class="btn btn-flat2"><span>YouTube</span></a>
                 <a href="introduction.html" class="btn btn-flat6"><span>自己紹介</span></a>
                 <a href="member.html" class="btn btn-flat"><span>サブスクファミリー</span></a>
+                <a href="inquiry.html" class="btn btn-flat"><span>お問い合わせ・ご意見</span></a>
             </div>
         </div>
     </div>
-
-    <script>
-        let count = localStorage.getItem("visitCount");
-
-        if (!count) {
-            count = 1; // 初めて訪問した場合は1
-        } else {
-            count = parseInt(count) + 1; // 訪問回数をインクリメント
-        }
-
-        // visitCount を保存するために setItem を使用
-        localStorage.setItem("visitCount", count);
-
-        document.getElementById("counter").textContent = count; // 表示部分に反映
-
-    </script>
     <script src="script.js"></script>
 </body>
 
