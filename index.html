@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>オクちゃんのサイト</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/icon.png" type="image/x-icon">
+</head>
+
+<body>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/CwD5yNKgKtM?autoplay=1&mute1"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allow="autoplay" allowfullscreen></iframe>
+    <!-- 背景動画 -->
+    <video autoplay muted loop id="background-video">
+        <source src="mv/ネオンゲーム背景.mp4" type="video/mp4">
+        <!-- サポートされていない場合の代替表示 -->
+        お使いのブラウザは動画をサポートしていません。
+    </video>
+    <p>いつも配信の応援ありがとうございます。息子と共に元気に配信しています。これからも配信の応援よろしくお願いします。</p>
+    <!-- コンテンツ -->
+    <div class="counter">
+        <p>このサイトの訪問人数:<span id="counter">0</span>人</p>
+    </div>
+    <div class="calendar-container">
+        <div class="calendar-header">
+            <button id="prev-month">&lt;</button>
+            <span id="month-year"></span>
+            <button id="next-month">&gt;</button>
+        </div>
+        <div class="calendar-body">
+            <div class="calendar-weekdays">
+                <div>日</div>
+                <div>月</div>
+                <div>火</div>
+                <div>水</div>
+                <div>木</div>
+                <div>金</div>
+                <div>土</div>
+            </div>
+            <div class="calendar-days" id="calendar-days">
+                <!-- カレンダーの日付がここに挿入されます -->
+            </div>
+            <div id="event-modal" class="modal">
+                <div class="modal-content">
+                    <h3>予定を入力を入力してください。</h3>
+                    <input type="text" id="event-title" placeholder="予定のタイトル">
+                    <button id="save-event">保存</button>
+                    <button id="close-modal">閉じる</button>
+                </div>
+            </div>
+            ※予定は状況により変動します。あらかじめご了承ください。
+        </div>
+    </div>
+    <div class="content-wrapper">
+        <div class="character-container">
+            <img src="img/オクちゃん.png" alt="オクちゃん" class="character-image">
+        </div>
+        <div class="content">
+            <img src="img/kakusaito.png" alt="各サイトはこちら" class="kakusaito-image">
+            <div class="button-grid">
+                <a href="https://x.com/okuchan100lv" class="btn btn-flat4"><span>X(Twitter)</span></a>
+                <a href="https://www.tiktok.com/@okuchan17" class="btn btn-flat"><span>TikTok</span></a>
+                <a href="https://www.twitch.tv/okuchan777" class="btn btn-flat3"><span>Twitch</span></a>
+                <a href="https://www.amazon.co.jp/hz/wishlist/ls/31NW5VFHG0IPH?ref_=wl_share"
+                    class="btn btn-flat5"><span>Amazon</span></a>
+                <a href="https://www.youtube.com/@%E3%82%AA%E3%82%AF%E3%81%A1%E3%82%83%E3%82%93"
+                    class="btn btn-flat2"><span>YouTube</span></a>
+                <a href="introduction.html" class="btn btn-flat6"><span>自己紹介</span></a>
+                <a href="member.html" class="btn btn-flat"><span>サブスクファミリー</span></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let count = localStorage.getItem("visitCount");
+
+        if (!count) {
+            count = 1;
+        } else {
+            count = parseInt(count) + 1;
+        }
+
+        localStorage.getItem("visitCount", count);
+        document.getElementById("counter").textContent = count;
+
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>

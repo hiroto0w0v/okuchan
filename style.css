@@ -1,0 +1,621 @@
+/* リセットと基本設定 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.kakusaito-image{
+  width: 1000px;
+  height: 100px;
+}
+
+p{
+  margin-top: 50px;
+  font-size: 25px;
+  color: white;
+  font-weight: bold;
+}
+
+/* 全体のレイアウト調整 */
+.content-wrapper {
+  display: flex; /* 横並びに */
+  align-items: flex-start; /* 上揃え */
+  gap: 30px; /* 画像とコンテンツ間の余白 */
+  max-width: 1200px; /* 最大幅 */
+  margin: 0 auto; /* 中央寄せ */
+}
+
+/* キャラクター画像 */
+.character-container {
+  position: fixed; /* 固定位置に配置 */
+  bottom: 20px; /* 下から20pxの位置 */
+  left: 20px; /* 左から20pxの位置 */
+  flex-shrink: 0; /* 画像が縮小しないように */
+}
+
+.character-image {
+  width: 200px; /* 幅の調整 */
+  height:auto;
+}
+
+
+/* コンテンツの設定 */
+.content {
+  display: flex;
+  flex-direction: column; /* コンテンツ内部は縦並び */
+  justify-content: flex-start; /* 上揃え */
+  width: 100%; /* コンテンツが画像の隣に収まるように */
+}
+
+/* 各サイトの画像 */
+.kakusaito-image {
+  width: 100%; /* 幅を調整 */
+  max-width: 400px; /* 最大幅 */
+  height: auto;
+  margin-bottom: 20px; /* ボタンとの間に余白 */
+  margin: 0 auto; /* 中央寄せ */
+  margin-bottom:10px;
+}
+
+
+
+
+/* ボタンデザイン */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+.btn,
+a.btn,
+button.btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+  border: 2px solid #fff; /* 白色の枠線 */
+}
+
+
+
+/* ホバー時の変更 */
+.btn:hover {
+  color: #000; /* 文字を黒に */
+  background: #fff; /* 背景を白に */
+  border-color: #fff; /* 枠線は白のまま */
+}
+
+
+
+a.btn-flat {
+  overflow: hidden;
+
+  padding: 1.5rem 6rem;
+
+  color: #fff;
+  border-radius: 0;
+  background: #000;
+  margin-bottom: 10px;
+}
+
+a.btn-flat span {
+  position: relative;
+}
+
+a.btn-flat:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 150%;
+  height: 500%;
+
+  content: "";
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+  transform: translateX(-98%) translateY(-25%) rotate(45deg);
+
+  background: #00b7ee;
+}
+
+a.btn-flat:hover:before {
+  -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+  transform: translateX(-9%) translateY(-25%) rotate(45deg);
+}
+
+
+a.btn-flat2 {
+  overflow: hidden;
+
+  padding: 1.5rem 6rem;
+
+  color: #fff;
+  border-radius: 0;
+  background: #000;
+}
+
+a.btn-flat2 span {
+  position: relative;
+}
+
+a.btn-flat2:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 150%;
+  height: 500%;
+
+  content: "";
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+  transform: translateX(-98%) translateY(-25%) rotate(45deg);
+
+  background: red;
+}
+
+a.btn-flat2:hover:before {
+  -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+  transform: translateX(-9%) translateY(-25%) rotate(45deg);
+}
+
+a.btn-flat3 {
+  overflow: hidden;
+
+  padding: 1.5rem 6rem;
+
+  color: #fff;
+  border-radius: 0;
+  background: #000;
+}
+
+a.btn-flat3 span {
+  position: relative;
+}
+
+a.btn-flat3:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 150%;
+  height: 500%;
+
+  content: "";
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+  transform: translateX(-98%) translateY(-25%) rotate(45deg);
+
+  background: rgb(199, 11, 199);
+}
+
+a.btn-flat3:hover:before {
+  -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+  transform: translateX(-9%) translateY(-25%) rotate(45deg);
+}
+
+
+
+a.btn-flat4 {
+  overflow: hidden;
+
+  padding: 1.5rem 6rem;
+
+  color: #fff;
+  border-radius: 0;
+  background: #000;
+}
+
+a.btn-flat4 span {
+  position: relative;
+}
+
+a.btn-flat4:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 150%;
+  height: 500%;
+
+  content: "";
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+  transform: translateX(-98%) translateY(-25%) rotate(45deg);
+
+  background: #00b7ee;
+}
+
+a.btn-flat4:hover:before {
+  -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+  transform: translateX(-9%) translateY(-25%) rotate(45deg);
+}
+
+a.btn-flat5 {
+  overflow: hidden;
+
+  padding: 1.5rem 6rem;
+
+  color: #fff;
+  border-radius: 0;
+  background: #000;
+}
+
+a.btn-flat5 span {
+  position: relative;
+}
+
+a.btn-flat5:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 150%;
+  height: 500%;
+
+  content: "";
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+  transform: translateX(-98%) translateY(-25%) rotate(45deg);
+
+  background: yellow;
+  
+}
+
+a.btn-flat5:hover:before {
+  -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+  transform: translateX(-9%) translateY(-25%) rotate(45deg);
+}
+
+
+a.btn-flat6 {
+  overflow: hidden;
+
+  padding: 1.5rem 6rem;
+
+  color: #fff;
+  border-radius: 0;
+  background: #000;
+}
+
+a.btn-flat6 span {
+  position: relative;
+}
+
+a.btn-flat6:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 150%;
+  height: 500%;
+
+  content: "";
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+  transform: translateX(-98%) translateY(-25%) rotate(45deg);
+
+  background: greenyellow;
+  
+}
+
+a.btn-flat6:hover:before {
+  -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+  transform: translateX(-9%) translateY(-25%) rotate(45deg);
+}
+
+
+
+
+
+
+/* ボタンのグリッド配置 */
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2列 */
+  gap: 25px; /* ボタン間の余白 */
+  align-items: start;
+}
+
+
+
+iframe{
+  margin-top: 20px;
+}
+
+
+
+
+/* 動画背景の設定 */
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 動画を画面全体にフィット */
+    z-index: -1; /* コンテンツを上に表示 */
+}
+
+/* コンテンツ配置 */
+.content {
+    position: relative;
+    z-index: 1; /* 動画の上に配置 */
+    text-align: center;
+    color: #fff; /* 白い文字でコントラストを高める */
+    margin-top: 70px;
+}
+
+.character-image {
+    width: 40%;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.custom-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #fff;
+    background-color: rgba(0, 0, 0, 0.5); /* 半透明の背景 */
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.custom-btn:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.calendar-container {
+  width: 80%;
+  margin: 0 auto;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #4CAF50;
+  color: white;
+}
+
+button {
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.calendar-body {
+  padding: 15px;
+}
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-weight: bold;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  text-align: center;
+}
+
+.calendar-days div {
+  padding: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.calendar-days div:hover {
+  background-color: #f0f0f0;
+}
+
+.calendar-days .empty {
+  background-color: #f5f5f5;
+}
+
+.calendar-days .today {
+  background-color: #ffcc00;
+  font-weight: bold;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 300px;
+  text-align: center;
+}
+
+.modal input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.modal button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+/* 火曜日と金曜日に表示される「空手」の日 */
+.karate-day {
+  background-color: lightblue;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+}
+
+.karate-day::after {
+  content: '空手';
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  font-size: 10px;
+  color: black;
+}
+
+
+/* 削除ボタンのスタイル */
+.delete-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 2px 5px;
+  font-size: 10px;
+  border-radius: 5px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+.delete-button:hover {
+  background-color: darkred;
+}
+
+
+
+/* モバイル対応のレイアウト調整 */
+@media (max-width: 768px) {
+  .content {
+      flex-direction: column; /* 縦並びに切り替え */
+      align-items: center; /* 中央揃え */
+      gap: 20px; /* 余白を少し小さく */
+  }
+
+  .character-image {
+      width: 60%; /* 横幅を縮小 */
+      max-width: 200px; /* 最大サイズ制限 */
+  }
+
+  .button-grid {
+      grid-template-columns: 1fr; /* 1列に変更 */
+      gap: 20px; /* ボタン間の余白を縮小 */
+      width: 90%; /* 全体幅を縮小して中央揃え */
+  }
+
+  .btn {
+    padding: 18px 30px; /* 内側の余白を少し縮小 */
+    font-size: 1.6rem; /* 文字サイズを少し縮小 */
+    width: 100%; /* モバイルではボタン幅を親要素に合わせる */
+}
+
+  .btn span {
+      white-space: nowrap; /* テキストを1行に収める */
+  }
+
+  .calendar-header {
+    flex-direction: column;
+    text-align: center;
+}
+
+.calendar-weekdays {
+    grid-template-columns: repeat(7, 1fr);
+    font-size: 0.9rem; /* 曜日のフォントサイズを少し小さく */
+}
+
+.calendar-days {
+    grid-template-columns: repeat(7, 1fr);
+    font-size: 1rem; /* 日付のフォントサイズ調整 */
+}
+
+.calendar-days div {
+    padding: 8px;
+}
+
+.calendar-body {
+    padding: 15px;
+}
+
+.calendar-header button {
+    font-size: 1.2rem;
+    padding: 8px;
+}
+
+.calendar-body {
+    padding: 10px;
+}
+
+p{
+  font-size: 20px;
+}
+
+
+}
+
+
+  
