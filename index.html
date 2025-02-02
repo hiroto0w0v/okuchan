@@ -21,39 +21,75 @@
         <!-- サポートされていない場合の代替表示 -->
         お使いのブラウザは動画をサポートしていません。
     </video>
+
+
+
+
     <p>-月間配信予定表-</p>
     <!-- コンテンツ -->
 
-    <div class="calendar-container">
-        <div class="calendar-header">
-            <button id="prev-month">&lt;</button>
-            <span id="month-year"></span>
-            <button id="next-month">&gt;</button>
-        </div>
-        <div class="calendar-body">
-            <div class="calendar-weekdays">
-                <div>日</div>
-                <div>月</div>
-                <div>火</div>
-                <div>水</div>
-                <div>木</div>
-                <div>金</div>
-                <div>土</div>
-            </div>
-            <div class="calendar-days" id="calendar-days">
-                <!-- カレンダーの日付がここに挿入されます -->
-            </div>
-            <div id="event-modal" class="modal">
-                <div class="modal-content">
-                    <h3>予定を入力を入力してください。</h3>
-                    <input type="text" id="event-title" placeholder="予定のタイトル">
-                    <button id="save-event">保存</button>
-                    <button id="close-modal">閉じる</button>
-                </div>
-            </div>
-            ※予定は状況により変動します。あらかじめご了承ください。
-        </div>
-    </div>
+
+
+
+
+    <table class="calendar">
+        <thead>
+            <tr>
+                <th>日</th>
+                <th>月</th>
+                <th>火</th>
+                <th>水</th>
+                <th>木</th>
+                <th>金</th>
+                <th>土</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="weekend"><span class="date">1</span><div class="note"></div></td>
+                <td><span class="date">2</span><div class="note"></div></td>
+                <td class="karate"><span class="date">3</span><div class="note">空手</div></td>
+                <td><span class="date">4</span><div class="note"></div></td>
+                <td><span class="date">5</span><div class="note"></div></td>
+                <td class="karate"><span class="date">6</span><div class="note">空手</div></td>
+                <td class="weekend"><span class="date">7</span><div class="note"></div></td>
+            </tr>
+            <tr>
+                <td class="weekend"><span class="date">8</span><div class="note"></div></td>
+                <td><span class="date">9</span><div class="note"></div></td>
+                <td class="karate"><span class="date">10</span><div class="note">空手</div></td>
+                <td><span class="date">11</span><div class="note holiday">建国記念の日</div></td>
+                <td><span class="date">12</span><div class="note"></div></td>
+                <td class="karate"><span class="date">13</span><div class="note">空手</div></td>
+                <td class="weekend"><span class="date">14</span><div class="note"></div></td>
+            </tr>
+            <tr>
+                <td><span class="date">15</span><div class="note"></div></td>
+                <td><span class="date">16</span><div class="note"></div></td>
+                <td class="karate"><span class="date">17</span><div class="note">空手</div></td>
+                <td><span class="date">18</span><div class="note"></div></td>
+                <td><span class="date">19</span><div class="note"></div></td>
+                <td class="karate"><span class="date">20</span><div class="note">空手</div></td>
+                <td class="weekend"><span class="date">21</span><div class="note"></div></td>
+            </tr>
+            <tr>
+                <td><span class="date">22</span><div class="note"></div></td>
+                <td><span class="date">23</span><div class="note holiday">天皇誕生日</div></td>
+                <td class="karate"><span class="date">24</span><div class="note">空手</div></td>
+                <td><span class="date">25</span><div class="note"></div></td>
+                <td><span class="date">26</span><div class="note"></div></td>
+                <td class="karate"><span class="date">27</span><div class="note">空手</div></td>
+                <td class="weekend"><span class="date">28</span><div class="note"></div></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+
+
     <div class="content-wrapper">
         <div class="character-container">
             <img src="img/オクちゃん.png" alt="オクちゃん" class="character-image">
