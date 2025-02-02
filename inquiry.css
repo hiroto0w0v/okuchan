@@ -123,22 +123,48 @@ a.btn-flat:hover:before {
 
 
 
-.slideshow-container {
-    position: relative;
-    max-width: 800px;
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
-  }
+
+
+  /* モバイル対応のレイアウト調整 */
+@media (max-width: 768px) {
+    /* 全体のフォントサイズ調整 */
+    body {
+      font-size: 1.4rem; /* 小さなデバイスでは少し小さくする */
+    }
   
-  .slide {
-    display: none;
-    width: 100%;
-    height: 100%;
-  }
+    /* 段落のフォントサイズ調整 */
+    p {
+      font-size: 1.6rem; /* 段落も少し小さくする */
+      padding: 1rem;
+    }
   
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+    /* ボタンのサイズ調整 */
+    .btn, .btn-flat {
+      font-size: 1.4rem;
+      padding: 1rem 3rem; /* モバイルではボタンが小さくても使いやすく */
+    }
+  
+    /* 背景動画の調整 */
+    #background-video {
+      object-fit: cover;
+      height: 100vh; /* 高さを画面にフィット */
+      width: 100%;
+    }
+  
+    /* XやTikTokリンクのフォントサイズ調整 */
+    .id {
+      font-size: 1.4rem;
+    }
+  
+    /* ボタンが重ならないように調整 */
+    .button-grid {
+      margin-top: 1.5rem;
+    }
+  
+    /* テキストが画面にフィットするように調整 */
+    p {
+      font-size: 1.6rem;
+      max-width: 90%;
+      margin: 0 auto;
+    }
+}
