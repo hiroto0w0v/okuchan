@@ -5,6 +5,7 @@
     box-sizing: border-box;
 }
 
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
@@ -611,9 +612,13 @@ button:hover {
 }
 
 p{
-  font-size: 20px;
+  font-size:25px;
 }
 
+iframe {
+  max-width: 100%; /* モバイルでは100%に合わせる */
+  height: 250px; /* 高さも調整 */
+}
 
 }
 
