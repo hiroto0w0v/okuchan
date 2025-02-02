@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>週間配信予定カレンダー</title>
+    <link rel="stylesheet" href="karenda.css">
+</head>
+<body>
+    <div class="calendar-container">
+        <h1>週間配信予定</h1>
+        
+        <div class="calendar">
+            <div class="day">
+                <h2>日曜日</h2>
+                <textarea id="sunday" placeholder="配信予定を入力"></textarea>
+            </div>
+            <div class="day">
+                <h2>月曜日</h2>
+                <textarea id="monday" placeholder="配信予定を入力"></textarea>
+            </div>
+            <div class="day">
+                <h2>火曜日</h2>
+                <textarea id="tuesday" placeholder="配信予定を入力"></textarea>
+            </div>
+            <div class="day">
+                <h2>水曜日</h2>
+                <textarea id="wednesday" placeholder="配信予定を入力"></textarea>
+            </div>
+            <div class="day">
+                <h2>木曜日</h2>
+                <textarea id="thursday" placeholder="配信予定を入力"></textarea>
+            </div>
+            <div class="day">
+                <h2>金曜日</h2>
+                <textarea id="friday" placeholder="配信予定を入力"></textarea>
+            </div>
+            <div class="day">
+                <h2>土曜日</h2>
+                <textarea id="saturday" placeholder="配信予定を入力"></textarea>
+            </div>
+        </div>
+        
+        <button onclick="saveSchedule()">予定を保存</button>
+    </div>
+
+    <script src="karenda.js"></script>
+</body>
+</html>
