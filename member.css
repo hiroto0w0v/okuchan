@@ -1,0 +1,165 @@
+
+h1{
+    color: white;
+    text-align: center;
+    font-size: 50px;
+}
+p{
+  color: white;
+  text-align: center;
+  font-size: 25px;
+}
+
+/* 動画背景の設定 */
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 動画を画面全体にフィット */
+    z-index: -1; /* コンテンツを上に表示 */
+}
+
+/* 表内の設定 */
+table{
+    background-color: white;
+    font-size: 40px;
+    text-align: center;
+    margin: 0 auto;
+    width: 1000px;
+    
+}
+
+
+
+/*ーーーーーーーーーートップに戻るボタンを設定するーーーーーーーーーー*/
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 62.5%;/*rem算出をしやすくするために*/
+}
+
+.btn,
+a.btn,
+button.btn {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+  border: 2px solid #fff; /* 白色の枠線 */
+}
+
+
+
+/* ホバー時の変更 */
+.btn:hover {
+  color: #000; /* 文字を黒に */
+  background: #fff; /* 背景を白に */
+  border-color: #fff; /* 枠線は白のまま */
+}
+
+
+
+a.btn-flat {
+  overflow: hidden;
+
+  padding: 1.5rem 6rem;
+
+  color: #fff;
+  border-radius: 0;
+  background: #000;
+}
+
+a.btn-flat span {
+  position: relative;
+}
+
+a.btn-flat:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 150%;
+  height: 500%;
+
+  content: "";
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+  transform: translateX(-98%) translateY(-25%) rotate(45deg);
+
+  background: #00b7ee;
+}
+
+a.btn-flat:hover:before {
+  -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+  transform: translateX(-9%) translateY(-25%) rotate(45deg);
+}
+
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+  /* ヘッダー */
+  h1 {
+      font-size: 30px; /* フォントサイズを小さく */
+  }
+  
+  p {
+      font-size: 18px; /* フォントサイズを小さく */
+  }
+
+  /* 動画背景 */
+  #background-video {
+      height: 100vh; /* 動画が画面全体に収まるように */
+  }
+
+  /* 表 */
+  table {
+      width: 90%; /* 表の幅を画面サイズに合わせる */
+      font-size: 20px; /* フォントサイズを小さく */
+  }
+
+  /* 表のセルに余白を追加して、文字が詰まらないように */
+  td, th {
+      padding: 10px;
+  }
+
+  /* ボタンの調整 */
+  .btn {
+      font-size: 1.2rem; /* フォントサイズを小さく */
+      padding: 1rem 3rem; /* ボタンのサイズを調整 */
+  }
+
+  .button-grid {
+      text-align: center;
+  }
+
+  /* ボタンのデザイン調整 */
+  a.btn-flat {
+      padding: 1rem 3rem; /* ボタンのパディング調整 */
+  }
+}
+
