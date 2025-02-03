@@ -38,18 +38,6 @@ p{
   margin: 0 auto; /* 中央寄せ */
 }
 
-/* キャラクター画像 */
-.character-container {
-  position: fixed; /* 固定位置に配置 */
-  bottom: 20px; /* 下から20pxの位置 */
-  left: 20px; /* 左から20pxの位置 */
-  flex-shrink: 0; /* 画像が縮小しないように */
-}
-
-.character-image {
-  width: 200px; /* 幅の調整 */
-  height:auto;
-}
 
 
 /* コンテンツの設定 */
@@ -486,6 +474,39 @@ button:hover {
   font-size: 12px;
 }
 
+table {
+  width: 60%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background: white;
+}
+th, td {
+  border: 2px solid #333;
+  padding: 15px;
+  text-align: center;
+  width: 14%;
+}
+th {
+  background: white;
+  color: black;
+}
+.cellSunday {
+  background: #ffdddd;
+  color: red;
+}
+.cellSaturday {
+  background: #ddeeff;
+  color: blue;
+}
+.cellHoliday {
+  background: #ffccaa;
+  font-weight: bold;
+}
+
+
+
+
+
 
 /* モバイル対応のレイアウト調整 */
 @media (max-width: 768px) {
@@ -495,10 +516,7 @@ button:hover {
       gap: 20px; /* 余白を少し小さく */
   }
 
-  .character-image {
-      width: 60%; /* 横幅を縮小 */
-      max-width: 200px; /* 最大サイズ制限 */
-  }
+
 
   .button-grid {
       grid-template-columns: 1fr; /* 1列に変更 */
@@ -556,6 +574,20 @@ iframe {
   max-width: 100%; /* モバイルでは100%に合わせる */
   height: 250px; /* 高さも調整 */
 }
+
+table {
+  font-size: 0.9rem;
+}
+
+th, td {
+  padding: 8px;
+}
+
+h2 {
+  font-size: 1.2rem;
+}
+
+
 
 }
 
