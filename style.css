@@ -503,7 +503,9 @@ th {
   font-weight: bold;
 }
 
-
+.cellTableHead{
+  font-size: 15px;
+}
 
 
 
@@ -577,10 +579,12 @@ iframe {
 
 table {
   font-size: 0.9rem;
+  width: 100%;  /* 表の幅を画面に合わせる */
 }
 
 th, td {
   padding: 8px;
+  writing-mode: horizontal-tb; /* 横書きに変更 */
 }
 
 h2 {
