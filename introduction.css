@@ -1,0 +1,134 @@
+
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center; /* 水平方向の中央揃え */
+    align-items: center; /* 垂直方向の中央揃え */
+    min-height: 100vh; /* 画面の高さを100%に設定 */
+    flex-direction: column; /* 子要素を縦に並べる */
+    padding: 20px; /* 画面の周りに少し余白 */
+  }
+
+
+/* 動画背景の設定 */
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 動画を画面全体にフィット */
+  z-index: -1; /* コンテンツを上に表示 */
+}
+
+
+
+
+  
+  .container {
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 20px; /* container間のスペース */
+    display: flex;
+    flex-direction: column; /* 縦並びにする */
+    gap: 20px; /* プロフィールカード間の隙間 */
+    align-items: center;
+  }
+  
+  .profile-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* 横並びを縦に変更 */
+    align-items: center;
+  }
+  
+  .profile-image {
+    width: 180px; /* 写真の幅を調整 */
+    height: 180px; /* 写真の高さも調整 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px; /* 写真とテキストの間隔 */
+  }
+  
+  .profile-image img  {
+    width: 100%; /* 写真の幅を100%に設定して親要素にフィットさせる */
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .profile-info {
+    text-align: left;
+    width: 100%;
+  }
+  
+  .profile-info h1{
+    font-size: 1.6em;
+    margin-bottom: 10px;
+  }
+  
+  .profile-info p{
+    margin: 10px 0;
+    line-height: 1.6;
+  }
+  
+  .profile-info strong{
+    color: #333;
+  }
+  
+
+
+
+
+  @media (max-width: 768px) {
+
+
+    body {
+        align-items: flex-start;
+        padding: 10px; /* 画面端の余白を少し小さく */
+    }
+  
+    .container {
+        width: 100%;
+        margin-right: 0; /* 右の余白を削除 */
+        gap: 15px; /* プロフィールカード間の隙間を少し縮める */
+    }
+  
+    .profile-card {
+        width: 100%; /* カードの幅を100%に設定 */
+        padding: 15px;
+        flex-direction: column;
+    }
+  
+    .profile-image {
+        width: 150px; /* 写真の幅を少し小さく */
+        height: 150px; /* 写真の高さを調整 */
+        margin-bottom: 20px; /* 写真とテキストの間隔 */
+    }
+  
+    .profile-info h1 {
+        font-size: 19px; /* 見出しのサイズを少し小さく */
+    }
+
+    .profile-info2 h1 {
+      font-size: 19px; /* 見出しのサイズを少し小さく */
+  }
+  
+    .profile-info p {
+        font-size: 0.95em; /* パラグラフのフォントサイズを調整 */
+        line-height: 1.5; /* 行間を少し詰める */
+    }
+    
+    .profile-info strong {
+        font-size: 1.1em; /* strongタグのフォントサイズを調整 */
+    }
+
+  
+  }
