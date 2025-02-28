@@ -119,6 +119,36 @@ a.btn-flat:hover:before {
   transform: translateX(-9%) translateY(-25%) rotate(45deg);
 }
 
+/* 画像を横並びにするためのコンテナ */
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* 中央揃え */
+  margin-bottom: 20px; /* 各行の間にスペースを追加 */
+  background-color: white;
+}
+
+/* 各画像のスタイル */
+.kakusaito-image {
+  width: 18%; /* 画像の幅を小さく設定 */
+  margin: 0 10px 10px 0; /* 画像の間にスペースを作る */
+  object-fit: cover; /* 画像のアスペクト比を保ったままリサイズ */
+}
+
+/* 画像が5つより多い場合に次の行に回す */
+.image-container .kakusaito-image:nth-child(5n) {
+  margin-right: 0; /* 5個目の画像の右側の余白を削除 */
+}
+
+.otegoro{
+  color: black;
+  font-weight: bold;
+  background-color: pink;
+}
+
+.osirase{
+  font-weight: bold;
+}
 
 /* モバイル対応 */
 @media (max-width: 768px) {
@@ -161,5 +191,8 @@ a.btn-flat:hover:before {
   a.btn-flat {
       padding: 1rem 3rem; /* ボタンのパディング調整 */
   }
+
+
+  
 }
 
