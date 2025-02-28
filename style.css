@@ -532,11 +532,12 @@ th {
   overflow: hidden;  /* はみ出た部分を隠す */
   background-color: #f8f8f8;  /* 背景色 */
   border: 1px solid #ccc;  /* 枠線 */
+  margin-top: 10px;
 }
 
 .news-scroll {
   display: flex;
-  animation: scroll-news 10s linear infinite;  /* スクロールアニメーション */
+  animation: scroll-news 15s linear infinite;  /* スクロールアニメーション */
 }
 
 .news-scroll p {
