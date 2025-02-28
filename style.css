@@ -561,7 +561,7 @@ th {
     transform: translateX(100%);  /* スタート位置：右端 */
   }
   100% {
-    transform: translateX(-300%);  /* 終了位置：左端 */
+    transform: translateX(-350%);  /* 終了位置：左端 */
   }
 }
 
