@@ -150,6 +150,11 @@ a.btn-flat:hover:before {
   font-weight: bold;
 }
 
+.ty{
+  color: black;
+  margin-top: -50px;
+}
+
 /* モバイル対応 */
 @media (max-width: 768px) {
   /* ヘッダー */
@@ -192,7 +197,11 @@ a.btn-flat:hover:before {
       padding: 1rem 3rem; /* ボタンのパディング調整 */
   }
 
-
+  .ty{
+    color: black;
+    font-size: 15px;
+    margin-top: -50px;
+  }
   
 }
 
