@@ -168,7 +168,7 @@ a.btn-flat:hover:before {
 
   /* 表 */
   table {
-      width: 90%; /* 表の幅を画面サイズに合わせる */
+      width: 100%; /* 表の幅を画面サイズに合わせる */
       font-size: 20px; /* フォントサイズを小さく */
   }
 
