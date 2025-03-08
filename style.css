@@ -658,6 +658,7 @@ h2 {
 }
 
 .osirase,.osusume{
+  margin-top: -10px;
   font-size: 18px;
 }
 
