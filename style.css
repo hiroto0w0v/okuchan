@@ -657,9 +657,10 @@ h2 {
   object-fit: contain; /* アスペクト比を保ちながら親要素に収める */
 }
 
-.osirase{
+.osirase,.osusume{
   font-size: 18px;
 }
+
 
 .news-scroll {
   animation: scroll-news 15s linear infinite;  /* スクロールアニメーション */
