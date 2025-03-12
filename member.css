@@ -155,6 +155,14 @@ a.btn-flat:hover:before {
   margin-top: -50px;
 }
 
+.woman{
+  background-color: yellow;
+}
+
+.nachan{
+  font-weight: bold;
+}
+
 /* モバイル対応 */
 @media (max-width: 768px) {
   /* ヘッダー */
