@@ -126,7 +126,19 @@ a.btn-flat:hover:before {
     font-weight: bold;
 }
 
+.profile-img{
+width: auto;
+}
 
+
+#profile-img {
+  width: 100px; /* または適宜調整 */
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto; /* 中央寄せ（必要なら） */
+}
 
 /* モバイル対応 */
 @media (max-width: 768px) {
