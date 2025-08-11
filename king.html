@@ -1,41 +1,73 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>オクちゃんのサイト</title>
     <link rel="stylesheet" href="king.css">
     <link rel="icon" href="img/N.png" type="image/x-icon">
+    <style>
+        /* 簡単な調整 */
+        #month-select {
+            font-size: 1rem;
+            padding: 5px;
+            margin: 10px;
+        }
+    </style>
 </head>
-
 <body>
 
-    <!-- 背景動画 -->
     <video autoplay muted loop id="background-video">
         <source src="mv/ネオンゲーム背景.mp4" type="video/mp4">
-        <!-- サポートされていない場合の代替表示 -->
         お使いのブラウザは動画をサポートしていません。
     </video>
+
     <h1 class="good">"最高いいね王"</h1>
     <img src="img/maha.jpeg" alt="あなたの写真" id="profile-img">
     <p class="name">「まはさん」<br>07.17現在（❤45,192）</p>
 
-    <p class="tody">08.07配信「まはさん」<br>（❤20,000）</p>
-    <p class="tody">08.06配信「まはさん」<br>（❤25,903）</p>
-    <p class="tody">08.04配信「まりもさん」<br>（❤17,000）</p>
-    <p class="tody">08.04配信「まはさん」<br>（❤17,000）</p>
-    <p class="tody">07.29配信「まはさん」<br>（❤16,142）</p>
-    <p class="tody">07.26配信「まはさん」<br>（❤18,378）</p>
-    <p class="tody">07.21配信「べべさん」<br>（❤12,309）</p>
-    <p class="tody">07.17配信「まはさん」<br>（❤45,192）</p>
-    <p class="tody">07.07配信「花粉症さん」<br>（❤12,398）</p>
-    <p class="tody">07.02配信「まはさん」<br>（❤16,000）</p>
-    <p class="tody">07.01配信「まはさん」<br>（❤21,762）</p>
+    <!-- 月選択プルダウン -->
+    <label for="month-select">月を選択:</label>
+    <select id="month-select">
+        <option value="all">すべて</option>
+        <option value="2025-08">2025年8月</option>
+        <option value="2025-07">2025年7月</option>
+    </select>
+
+    <!-- 配信リスト -->
+    <div id="history">
+        <p class="tody" data-date="2025-08-07">08.09配信「Sullyさん」<br>（❤10,837）</p>
+        <p class="tody" data-date="2025-08-07">08.07配信「まはさん」<br>（❤20,000）</p>
+        <p class="tody" data-date="2025-08-06">08.06配信「まはさん」<br>（❤25,903）</p>
+        <p class="tody" data-date="2025-08-04">08.04配信「まりもさん」<br>（❤17,000）</p>
+        <p class="tody" data-date="2025-08-04">08.04配信「まはさん」<br>（❤17,000）</p>
+        <p class="tody" data-date="2025-07-29">07.29配信「まはさん」<br>（❤16,142）</p>
+        <p class="tody" data-date="2025-07-26">07.26配信「まはさん」<br>（❤18,378）</p>
+        <p class="tody" data-date="2025-07-21">07.21配信「べべさん」<br>（❤12,309）</p>
+        <p class="tody" data-date="2025-07-17">07.17配信「まはさん」<br>（❤45,192）</p>
+        <p class="tody" data-date="2025-07-07">07.07配信「花粉症さん」<br>（❤12,398）</p>
+        <p class="tody" data-date="2025-07-02">07.02配信「まはさん」<br>（❤16,000）</p>
+        <p class="tody" data-date="2025-07-01">07.01配信「まはさん」<br>（❤21,762）</p>
+    </div>
 
     <div class="button-grid">
         <a href="index.html" class="btn btn-flat"><span>トップに戻る</span></a>
     </div>
-</body>
 
+    <script>
+        document.getElementById('month-select').addEventListener('change', function () {
+            const selected = this.value;
+            const items = document.querySelectorAll('#history .tody');
+
+            items.forEach(item => {
+                const date = item.getAttribute('data-date'); // 例: 2025-08-07
+                if (selected === "all" || date.startsWith(selected)) {
+                    item.style.display = "block";
+                } else {
+                    item.style.display = "none";
+                }
+            });
+        });
+    </script>
+</body>
 </html>
