@@ -548,6 +548,56 @@ th {
   color: #333;
   margin-right: 50px;  /* 各 <p> の間に右の間隔を追加 */
 }
+ .news-section {
+            width: 80%;
+            margin: 20px auto;
+        }
+        .news-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .news-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .news-item {
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+        }
+        .news-date {
+            color: #888;
+            font-size: 14px;
+            margin-right: 10px;
+        }
+        .news-section {
+            width: 80%;
+            margin: 20px auto;
+        }
+        .news-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: white;
+        }
+        .news-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .news-item {
+            border-bottom: 1px solid white;
+            padding: 10px 0;
+        }
+        .news-date {
+            color: white;
+            font-size: 14px;
+            margin-right: 10px;
+        }
+        /* お知らせ内容の色を変更 */
+    .news-content {
+        color: white; /* 赤色 */
+        font-weight: bold;
+    }
 
 @keyframes slideshow1 {
   0%   { opacity: 0; }
