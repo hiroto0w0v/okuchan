@@ -10,9 +10,10 @@
 </head>
 
 <body>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/EA0-whWv7uo?si=dOYVMumnarEiFWCi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     
-    <p class="osusume">▲おすすめ動画です。ぜひ！ご覧ください。</p>
+    <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/EA0-whWv7uo?si=dOYVMumnarEiFWCi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
+    
+    <!--<p class="osusume">▲おすすめ動画です。ぜひ！ご覧ください。</p>-->
     
     <!--<div class="manual-slide1">
         <img src="img/top_touzyou.jpg" alt="img">
@@ -25,7 +26,34 @@
         <!-- サポートされていない場合の代替表示 -->
         お使いのブラウザは動画をサポートしていません。
     </video>
+    <div class="news-section">
+        <div class="news-title">お知らせ</div>
+        <ul class="news-list" id="newsList">
+            <!-- お知らせがここに自動で表示されます -->
+        </ul>
+    </div>
 
+    <script>
+        // お知らせデータ（例）
+        const newsData = [
+            { date: '2025-08-16', content: '只今活動お休み中（必ず戻ります）' },
+        ];
+
+        // 日付順にソート（新しい順）
+        newsData.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+        // 最新3件だけ表示
+        const latestNews = newsData.slice(0, 3);
+
+        const newsList = document.getElementById('newsList');
+
+        latestNews.forEach(news => {
+            const li = document.createElement('li');
+            li.className = 'news-item';
+            li.innerHTML = `<span class="news-date">${news.date}</span><span class="news-content">${news.content}</span>`;
+            newsList.appendChild(li);
+        });
+    </script>
     <div class="news-container">
         <div class="news-scroll">
             <!--<p>【NEW】進学・進級・新社会人おめでとうございます！！新たな場所で頑張っていきましょう！！</p>-->
