@@ -65,69 +65,169 @@
 
     <p>-月間配信予定表-</p>
     <!-- コンテンツ -->
-<table>
-  <tbody>
-    <tr>
-      <th colspan="7" class="cellTableHead">
-        2025年8月<br>※予定は状況により、変更になる場合があります。<br>予定は一週間ごとに予定追記しています。
-      </th>
-    </tr>
-    <tr>
-      <th class="cellSunday">日</th>
-      <th>月</th>
-      <th>火</th>
-      <th>水</th>
-      <th>木</th>
-      <th>金</th>
-      <th class="cellSaturday">土</th>
-    </tr>
-    <tr>
-      <td class="cellSunday"> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td>1<br>--</td>
-      <td>2<br>--</td>
-      <td class="cellSaturday">3<br>--</td>
-    </tr>
-    <tr>
-      <td class="cellSunday">4<br>--</td>
-      <td>5<br>--</td>
-      <td>6<br>--</td>
-      <td>7<br>--</td>
-      <td>8<br>--</td>
-      <td>9<br>--</td>
-      <td class="cellSaturday">10<br>--</td>
-    </tr>
-    <tr>
-      <td class="cellSunday">11<br>--</td>
-      <td>12<br></td>
-      <td>13<br></td>
-      <td>14<br></td>
-      <td>15<br></td>
-      <td>16<br></td>
-      <td class="cellSaturday">17<br></td>
-    </tr>
-    <tr>
-      <td class="cellSunday">18<br></td>
-      <td>19<br></td>
-      <td>20<br></td>
-      <td>21<br></td>
-      <td>22<br></td>
-      <td>23<br></td>
-      <td class="cellSaturday">24<br></td>
-    </tr>
-    <tr>
-      <td class="cellSunday">25<br></td>
-      <td>26<br></td>
-      <td>27<br></td>
-      <td>28<br></td>
-      <td>29<br></td>
-      <td>30<br></td>
-      <td class="cellSaturday">31<br></td>
-    </tr>
-  </tbody>
-</table>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>カレンダー</title>
+  <style>
+    .header {
+  text-align: center;
+  margin: 10px;
+  font-size: 20px;
+  color: white;           /* ← 文字色を白に変更 */
+  background-color: #333; /* 背景を濃い色にすると映える */
+  padding: 8px;
+  border-radius: 6px;
+}
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 600px;
+      margin: 20px auto;
+      text-align: center;
+    }
+    th, td {
+      border: 1px solid #aaa;
+      padding: 5px;
+      width: 14.2%;
+      height: 70px;
+      vertical-align: top;
+      cursor: pointer;
+    }
+    td:hover {
+      background-color: #f0f8ff;
+    }
+    .cellSunday { color: red; }
+    .cellSaturday { color: blue; }
+    .header {
+      text-align: center;
+      margin: 10px;
+      font-size: 20px;
+    }
+    .nav {
+      text-align: center;
+      margin: 10px;
+    }
+    button {
+      margin: 0 5px;
+      padding: 5px 10px;
+    }
+    .day {
+      font-weight: bold;
+      display: block;
+    }
+    .event {
+      font-size: 12px;
+      margin-top: 4px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="header" id="monthYear"></div>
+  <div class="nav">
+    <button onclick="prevMonth()">← 前の月</button>
+    <button onclick="nextMonth()">次の月 →</button>
+  </div>
+  <table id="calendar">
+    <thead>
+      <tr>
+        <th class="cellSunday">日</th>
+        <th>月</th>
+        <th>火</th>
+        <th>水</th>
+        <th>木</th>
+        <th>金</th>
+        <th class="cellSaturday">土</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    let currentDate = new Date(2025, 7); // 2025年8月スタート
+    let events = {}; // 予定を保存するオブジェクト { "2025-08-15": "会議" }
+
+    function renderCalendar(date) {
+      const year = date.getFullYear();
+      const month = date.getMonth();
+      const firstDay = new Date(year, month, 1);
+      const lastDay = new Date(year, month + 1, 0);
+      const tbody = document.querySelector("#calendar tbody");
+      tbody.innerHTML = "";
+
+      document.getElementById("monthYear").innerText = `${year}年${month + 1}月`;
+
+      let row = document.createElement("tr");
+
+      // 空白セル
+      for (let i = 0; i < firstDay.getDay(); i++) {
+        let cell = document.createElement("td");
+        row.appendChild(cell);
+      }
+
+      // 日付セル
+      for (let d = 1; d <= lastDay.getDate(); d++) {
+        let cell = document.createElement("td");
+        let dateKey = `${year}-${String(month + 1).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
+
+        // 日付表示
+        let daySpan = document.createElement("span");
+        daySpan.classList.add("day");
+        daySpan.innerText = d;
+        cell.appendChild(daySpan);
+
+        // 予定があれば表示
+        if (events[dateKey]) {
+          let eventDiv = document.createElement("div");
+          eventDiv.classList.add("event");
+          eventDiv.innerText = events[dateKey];
+          cell.appendChild(eventDiv);
+        }
+
+        // 日曜赤 / 土曜青
+        if ((firstDay.getDay() + d - 1) % 7 === 0) cell.classList.add("cellSunday");
+        if ((firstDay.getDay() + d - 1) % 7 === 6) cell.classList.add("cellSaturday");
+
+        // クリックで予定追加/編集
+        cell.addEventListener("click", function () {
+          let newEvent = prompt(`${year}年${month + 1}月${d}日の予定を入力してください:`, events[dateKey] || "");
+          if (newEvent !== null) {
+            if (newEvent.trim() === "") {
+              delete events[dateKey]; // 空なら削除
+            } else {
+              events[dateKey] = newEvent; // 保存
+            }
+            renderCalendar(currentDate); // 再描画
+          }
+        });
+
+        row.appendChild(cell);
+
+        if ((firstDay.getDay() + d) % 7 === 0 || d === lastDay.getDate()) {
+          tbody.appendChild(row);
+          row = document.createElement("tr");
+        }
+      }
+    }
+
+    function prevMonth() {
+      currentDate.setMonth(currentDate.getMonth() - 1);
+      renderCalendar(currentDate);
+    }
+
+    function nextMonth() {
+      currentDate.setMonth(currentDate.getMonth() + 1);
+      renderCalendar(currentDate);
+    }
+
+    renderCalendar(currentDate);
+  </script>
+</body>
+</html>
+
 
 
           
